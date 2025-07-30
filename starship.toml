@@ -1,0 +1,47 @@
+add_newline = true
+format = """
+[\ue0b6](navy)\
+$username\
+
+[\ue0b0](navy bg:green)\
+$hostname\
+[\ue0b0 ](green bg:purple)\
+$git_branch\
+$git_status\
+[\ue0b0](bg:blue1 rose)\
+$directory\
+[ ](bg:blue1)[\ue0b0](blue1) 
+"""
+
+palette = "idk"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bold bg:navy white"
+
+[hostname]
+ssh_only = false
+format = "[ $hostname]($style)"
+style = "bold bg:green white"
+
+[git_branch]
+format = "[$symbol$branch ]($style)"
+style = "bold bg:purple white"
+
+[git_status]
+format = "[\\[$all_status$ahead_behind\\]]($style)"
+style = "bold bg:rose white"
+
+[directory]
+format = "[ $path]($style)[$read_only]($read_only_style)"
+style = "bold bg:blue1 fg:white"
+fish_style_pwd_dir_length = 1
+
+[palettes.idk]
+navy = "#5c6ac4"
+white = "#ffffff"
+green = "#2dd4bf"
+blue1 = "#4147f2"
+purple = "#a855f7"
+rose = "#f43f5e"
