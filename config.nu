@@ -8,7 +8,7 @@ use std/util "path add"
 path add "~.local/share/mise/shims"
 }
 
-alias l = eza -la --icons
+alias l = eza -1a --icons
 alias lg = lazygit
 
 def i [prog] { curl $"cheat.sh/($prog)" }
