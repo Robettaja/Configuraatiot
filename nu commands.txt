@@ -1,4 +1,1 @@
-mkdir ($nu.data-dir | path join "vendor/autoload")
-zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 mise activate nu | save -f ($nu.data-dir | path join "vendor/autoload/mise.nu")
