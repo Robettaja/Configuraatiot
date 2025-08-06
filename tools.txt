@@ -1,0 +1,11 @@
+Starship 
+zoxide
+eza
+bat
+fd
+ripgrep
+xh
+dua | dua-cli
+yazi
+delta | git-delta
+mise
