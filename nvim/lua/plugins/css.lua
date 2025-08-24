@@ -1,11 +1,10 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-        otps = {
-            servers = {
-                cssls = {},
-            },
-        },
-
-    }
+  {
+    "neovim/nvim-lspconfig",
+    otps = {
+      servers = {
+        cssls = {},
+      },
+    },
+  },
 }

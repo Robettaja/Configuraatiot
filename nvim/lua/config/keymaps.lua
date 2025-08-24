@@ -4,8 +4,7 @@
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory in Oil" })
 
 local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
+  vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
--- Don't yank when deleting single character
 map("n", "x", '"_x')
