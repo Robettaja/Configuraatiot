@@ -1,0 +1,21 @@
+# ######## Toolkit backends ########
+export GDK_BACKEND='wayland,x11'
+export QT_QPA_PLATFORM='wayland;xcb'
+export SDL_VIDEODRIVER='wayland'
+export CLUTTER_BACKEND='wayland'
+export ELECTRON_OZONE_PLATFORM_HINT='auto'
+
+# ############# Others #############
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# ############# Themes #############
+export QT_QPA_PLATFORMTHEME='qt5ct'
+export QT_WAYLAND_DISABLE_WINDOWDECORATION='1'
+export QT_AUTO_SCREEN_SCALE_FACTOR='1'
+export HYPRCURSOR_THEME='AC-Vimix'
+export HYPRCURSOR_SIZE='32'
+export XCURSOR_THEME='AC-Vimix'
+export XCURSOR_SIZE='32'
+
+# ###### app2unit Integration ######
+export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
