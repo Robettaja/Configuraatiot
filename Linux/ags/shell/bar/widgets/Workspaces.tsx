@@ -39,8 +39,10 @@ function WorkspaceButton({ ws, num, ...props }: WorkspaceButtonProps) {
             [
                 "base",
                 fws?.id === ws.id ? "focused" : "",
-                hyprland.get_workspace(ws.id)?.get_clients()?.length > 0 ? "" : "empty",
-            ].filter(Boolean)
+                hyprland.get_workspace(ws.id)?.get_clients()?.length > 0
+                    ? ""
+                    : "empty",
+            ].filter(Boolean),
     );
 
     return (
@@ -59,7 +61,10 @@ export default function Workspaces({ monitor }: { monitor: Accessor<number> }) {
                         <For each={createState(range(9, 1))[0]}>
                             {(i) => (
                                 <WorkspaceButton
-                                    ws={AstalHyprland.Workspace.dummy(monitor * 9 + i, null)}
+                                    ws={AstalHyprland.Workspace.dummy(
+                                        monitor * 9 + i,
+                                        null,
+                                    )}
                                     num={i}
                                 />
                             )}

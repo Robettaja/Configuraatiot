@@ -7,20 +7,24 @@ label.icon {
 }
 .bar {
     min-height: 36px;
+    border-radius: 10px;
+    padding: 0 8px;
 }
 .pill {
-    background-color: #00000077;
-    border-radius: 18px;
+    background-color: #28282b;
+    border: 2px solid #00ddff;
+    border-radius: 16px;
     padding: 0 12px;
 }
 .pill.pill-media {
     padding-right: 0;
+    // border: 0px;
 }
 .pill.pill-left {
-    padding: 0 8px 0  12px;
+    padding: 0 12px 0 12px;
     border-radius: 18px 0 0 18px;
 }
 .pill.pill-right {
-    padding: 0 12px 0 8px;
-    border-radius: 0 18px 18px 0;
+    padding: 12px 0 0 12px;
+    border-radius: 0 10px 10px 0;
 }

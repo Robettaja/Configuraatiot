@@ -13,7 +13,6 @@ import AstalHyprland from "gi://AstalHyprland?version=0.1";
 import { createBinding } from "ags";
 import Workspaces from "./widgets/Workspaces";
 
-
 const hyprland = AstalHyprland.get_default();
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
@@ -21,8 +20,14 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
     app.apply_css(style);
     const monitor = createBinding(hyprland, "monitors").as(
         (monitor) =>
-            monitor.find((m) => m.name.toLowerCase() === gdkmonitor.connector.toLowerCase())?.id ?? 0);
-    const activeMonitor = createBinding(hyprland, "focusedMonitor").as((m) => m.id);
+            monitor.find(
+                (m) =>
+                    m.name.toLowerCase() === gdkmonitor.connector.toLowerCase(),
+            )?.id ?? 0,
+    );
+    const activeMonitor = createBinding(hyprland, "focusedMonitor").as(
+        (m) => m.id,
+    );
     return (
         <window
             visible
@@ -35,7 +40,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         >
             <centerbox cssClasses={["bar"]}>
                 <box $type="start" spacing={8}>
-                    <box cssClasses={["pill", "pill-right"]}>
+                    <box cssClasses={["pill"]}>
                         <Workspaces monitor={monitor} />
                     </box>
                     <box>
@@ -55,7 +60,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
                         <Volume />
                         <NetworkStatus />
                     </box>
-                    <box cssClasses={["pill", "pill-left"]}>
+                    <box cssClasses={["pill"]}>
                         <Clock />
                     </box>
                 </box>
