@@ -6,6 +6,7 @@ import SysTray from "./widgets/Tray";
 import Volume from "./widgets/Volume";
 import NetworkStatus from "./widgets/Network";
 import WeatherStatus from "./widgets/Weather";
+import ActiveLayout from "./widgets/ActiveLayout";
 import Media from "./widgets/Media";
 import NetworkPerformance from "./widgets/NetworkPerformance";
 import ActiveWindow from "./widgets/ActiveWindows";
@@ -59,6 +60,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
                         <WeatherStatus />
                         <Volume />
                         <NetworkStatus />
+                        <ActiveLayout />
                     </box>
                     <box cssClasses={["pill"]}>
                         <Clock />

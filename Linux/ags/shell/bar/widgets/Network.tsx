@@ -9,7 +9,7 @@ const netInfo = createComputed(
         createBinding(network, "wifi"),
         createBinding(network, "connectivity"),
     ],
-    (primary, wifi, connectivity) => ({ primary, wifi, connectivity })
+    (primary, wifi, connectivity) => ({ primary, wifi, connectivity }),
 );
 type NetworkInfo = {
     primary: Network.Primary;
