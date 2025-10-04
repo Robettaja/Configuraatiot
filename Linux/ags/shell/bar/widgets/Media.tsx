@@ -10,8 +10,18 @@ app.apply_css(style);
 function MediaActual({ player }: { player: Mpris.Player }) {
     const songLabel = createComputed(
         [createBinding(player, "artist"), createBinding(player, "title")],
-        (artist, title) =>
-            !artist && !title ? "Nothing is playing" : `${title} - ${artist}`
+        (artist, title) => {
+            let cleanTitle = title;
+            let splitTitle = cleanTitle.split("#");
+
+            cleanTitle = cleanTitle.startsWith("#")
+                ? splitTitle[1]
+                : splitTitle[0];
+
+            return !artist && !title
+                ? "Nothing is playing"
+                : `${cleanTitle} - ${artist}`;
+        },
     );
 
     return (
@@ -22,8 +32,9 @@ function MediaActual({ player }: { player: Mpris.Player }) {
                 </button>
                 <button class="base play" onClicked={() => player.play_pause()}>
                     <label
-                        label={createBinding(player, "playbackStatus").as((s) =>
-                            s === Mpris.PlaybackStatus.PLAYING ? "" : ""
+                        label={createBinding(player, "playbackStatus").as(
+                            (s) =>
+                                s === Mpris.PlaybackStatus.PLAYING ? "" : "",
                         )}
                         class="media-icon"
                     />
@@ -50,7 +61,7 @@ function MediaActual({ player }: { player: Mpris.Player }) {
 
 export default function Media() {
     const player = createBinding(mpris, "players").as(
-        (players) => players.find((p) => p.busName.endsWith("playerctld"))!
+        (players) => players.find((p) => p.busName.endsWith("playerctld"))!,
     );
 
     return (
