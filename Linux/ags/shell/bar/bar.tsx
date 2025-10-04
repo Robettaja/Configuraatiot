@@ -7,6 +7,7 @@ import Volume from "./widgets/Volume";
 import NetworkStatus from "./widgets/Network";
 import WeatherStatus from "./widgets/Weather";
 import ActiveLayout from "./widgets/ActiveLayout";
+import Battery from "./widgets/Battery";
 import Media from "./widgets/Media";
 import NetworkPerformance from "./widgets/NetworkPerformance";
 import ActiveWindow from "./widgets/ActiveWindows";
