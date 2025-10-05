@@ -4,23 +4,43 @@ import Mpris from "gi://AstalMpris";
 import style from "./Media.scss";
 
 const mpris = Mpris.get_default();
-
 app.apply_css(style);
 
-function MediaActual({ player }: { player: Mpris.Player }) {
+function MediaActual({ player }: { player: Mpris.Player | null }) {
+    if (!player) {
+        return (
+            <box>
+                <box spacing={8} class="media-buttons">
+                    <button class="base" sensitive={false}>
+                        <label label="󰒮" class="media-icon" />
+                    </button>
+                    <button class="base play" sensitive={false}>
+                        <label label="" class="media-icon" />
+                    </button>
+                    <button class="base" sensitive={false}>
+                        <label label="󰒭" class="media-icon" />
+                    </button>
+                </box>
+                <box class="cover-art">
+                    <label label="Nothing is playing" class="media-label" />
+                </box>
+            </box>
+        );
+    }
+
     const songLabel = createComputed(
         [createBinding(player, "artist"), createBinding(player, "title")],
         (artist, title) => {
-            let cleanTitle = title;
-            let splitTitle = cleanTitle.split("#");
+            if (!artist && !title) return "Nothing is playing";
+
+            let cleanTitle = title ?? "";
+            const splitTitle = cleanTitle.split("#");
 
             cleanTitle = cleanTitle.startsWith("#")
                 ? splitTitle[1]
                 : splitTitle[0];
 
-            return !artist && !title
-                ? "Nothing is playing"
-                : `${cleanTitle} - ${artist}`;
+            return `${cleanTitle} - ${artist}`;
         },
     );
 
@@ -45,13 +65,11 @@ function MediaActual({ player }: { player: Mpris.Player }) {
             </box>
             <box
                 class="cover-art"
-                css={createBinding(player, "coverArt").as((cover) => {
-                    if (!cover) {
-                        return `background-image: linear-gradient(0deg, #777, #777), linear-gradient(0deg,#000,#000) ;`;
-                    }
-
-                    return `background-image: linear-gradient(0deg, #777, #777), url('file://${cover}');`;
-                })}
+                css={createBinding(player, "coverArt").as((cover) =>
+                    cover
+                        ? `background-image: linear-gradient(0deg,#777,#777),url('file://${cover}');`
+                        : `background-image: linear-gradient(0deg,#777,#777),linear-gradient(0deg,#000,#000);`,
+                )}
             >
                 <label label={songLabel} class="media-label" />
             </box>
@@ -61,7 +79,8 @@ function MediaActual({ player }: { player: Mpris.Player }) {
 
 export default function Media() {
     const player = createBinding(mpris, "players").as(
-        (players) => players.find((p) => p.busName.endsWith("playerctld"))!,
+        (players) =>
+            players.find((p) => p.busName.endsWith("playerctld")) ?? null,
     );
 
     return (
