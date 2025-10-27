@@ -1,0 +1,22 @@
+.clip-area {
+    color: white;
+    background-color: #00000077;
+    border-radius: 16px;
+    padding: 8px;
+    border: 2px solid #00ddff;
+}
+.clip-icon {
+    // padding-right: 0;
+}
+.clip-item {
+    background: none;
+    padding: 0;
+    margin: 5px;
+    font-size: 2px;
+}
+.clip-item-text {
+    font-size: 2px;
+}
+.clip-item:hover {
+    color: #ffffff77;
+}
