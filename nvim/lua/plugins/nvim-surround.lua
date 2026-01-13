@@ -1,13 +1,20 @@
 return {
-  "kylechui/nvim-surround",
-  event = "VeryLazy",
-  config = function()
-    require("nvim-surround").setup({
+  {
+    "kylechui/nvim-surround",
+    opts = {
       keymaps = {
-
-        normal = "gs",
+        normal = {
+          add = "ns", -- Add surrounding in normal mode
+          delete = "nd", -- Delete surrounding
+          change = "nc", -- Change surrounding
+        },
+        visual = {
+          add = "ns", -- Add surrounding in visual mode
+        },
+        insert = {
+          add = "ns", -- Insert mode add
+        },
       },
-      -- Configuration here, or leave empty to use defaults
-    })
-  end,
+    },
+  },
 }
