@@ -1,10 +1,35 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory in Oil" })
+--Tools
+vim.keymap.set("n", "_", "<CMD>Oil<CR>", { desc = "Opens Oil" })
+vim.keymap.set("n", "<leader>ce", ":Trouble diagnostics toggle<CR> ", { desc = "Trouble Diagnostics" })
+vim.keymap.set("n", "<leader>t", "<CMD>Atone toggle<CR>", { desc = "Undotree" })
+vim.keymap.set("n", "<leader>i", ":lua Snacks.picker.icons()<CR> ", { desc = "Icons/Emojis" })
+vim.keymap.set("n", "+", function()
+  require("dial.map").manipulate("increment", "normal")
+end)
+vim.keymap.set("n", "-", function()
+  require("dial.map").manipulate("decrement", "normal")
+end)
 
-local function map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
-end
+-- Clipboard overrides
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set({ "n", "v" }, "Y", '"zy')
+vim.keymap.set({ "n" }, "YY", '"zyy')
+vim.keymap.set({ "n", "v" }, "D", '"zd')
+vim.keymap.set({ "n" }, "DD", '"zdd')
+vim.keymap.set({ "n" }, "P", '"zp')
 
-map("n", "x", '"_x')
+-- Delete bloat
+pcall(vim.keymap.del, "n", "<leader>e")
+pcall(vim.keymap.del, "n", "<leader>E")
+pcall(vim.keymap.del, "n", "<leader>fe")
+pcall(vim.keymap.del, "n", "<leader>fE")
+pcall(vim.keymap.del, "n", "<leader>fe")
+pcall(vim.keymap.del, "n", "<leader>su")
+pcall(vim.keymap.del, "n", "<leader>K")
+pcall(vim.keymap.del, "n", "<leader>?")
+pcall(vim.keymap.del, "n", "<leader>q")
+pcall(vim.keymap.del, "n", "<leader>n")
+pcall(vim.keymap.del, "n", "<leader>`")
+pcall(vim.keymap.del, "n", "<leader>S")
+pcall(vim.keymap.del, "n", "<leader>,")
+pcall(vim.keymap.del, "n", "<leader>L")
