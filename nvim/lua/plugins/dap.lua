@@ -27,7 +27,6 @@ return {
         end,
         desc = "Debug: Continue",
       },
-
       {
         "<F10>",
         function()
@@ -35,7 +34,6 @@ return {
         end,
         desc = "Debug: Step Over",
       },
-
       {
         "<F11>",
         function()
@@ -43,7 +41,6 @@ return {
         end,
         desc = "Debug: Step Into",
       },
-
       {
         "<F12>",
         function()
@@ -51,7 +48,6 @@ return {
         end,
         desc = "Debug: Step Out",
       },
-
       {
         "<leader>db",
         function()
@@ -59,15 +55,15 @@ return {
         end,
         desc = "Debug: Toggle Breakpoint",
       },
-
       {
         "<leader>dB",
         function()
-          require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+          require("dap").set_breakpoint(
+            vim.fn.input("Breakpoint condition: ")
+          )
         end,
         desc = "Debug: Conditional Breakpoint",
       },
-
       {
         "<leader>dq",
         function()
@@ -82,6 +78,25 @@ return {
         end,
         desc = "Debug: Toggle UI",
       },
+    },
+  },
+
+  {
+    "fm39hz/nvim-dap-godot-mono",
+    dependencies = {
+      "stevearc/overseer.nvim",
+    },
+    ft = "cs",
+    opts = {
+      godot = {
+        -- Your Mono Godot executable
+        godot_executable = "godot-mono",
+
+        -- Mason's netcoredbg
+        netcoredbg_path = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg",
+      },
+
+      verbose = true,
     },
   },
 }
