@@ -30,6 +30,10 @@ return {
         "<leader><leader>",
         icon = { icon = "󰱽", color = "green" },
       },
+      {
+        "<leader>p",
+        icon = { icon = "", color = "blue" },
+      },
     },
   },
 }
