@@ -8,7 +8,7 @@ $hostname\
 [\ue0b0 ](green bg:purple)\
 $git_branch\
 $git_status\
-[\ue0b0](bg:blue1 rose)\
+[\ue0b0 ](bg:blue1 rose)\
 $directory\
 [ ](bg:blue1)[\ue0b0](blue1) 
 """
