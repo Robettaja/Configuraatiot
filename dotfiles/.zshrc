@@ -8,6 +8,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light MichaelAquilina/zsh-autoswitch-virtualenv
 
 # Snippets
 zinit snippet OMZL::git.zsh
@@ -17,6 +18,19 @@ zinit snippet OMZP::archlinux
 
 # Load completions
 autoload -Uz compinit && compinit
+
+# Editor exports
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Open buffer line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
+# chpwd hook
+chpwd() {
+  eza --group-directories-first --icons=auto
+}
 
 zinit cdreplay -q
 
@@ -40,6 +54,12 @@ bindkey '^H' backward-kill-word                   # Ctrl+Backspace
 bindkey '^[[3;5~' kill-word                       # Ctrl+Delete
 bindkey '^[[3~' delete-char                       # Delete key
 bindkey ' ' magic-space                           # Space
+bindkey '^v' edit-command-line
+
+# Startup command
+if [[ -z "$TMUX" ]]; then
+    tmux new-session \; set-hook -g client-detached 'kill-session'
+fi
 
 # History
 HISTSIZE=5000
@@ -77,8 +97,7 @@ export FZF_ALT_C_OPTS="--preview 'eza -a --tree -I.git --git-ignore --icons --co
 export FZF_CTRL_T_COMMAND="fd --type file --hidden"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=full --line-range=:500 {}'"
 export FZF_DEFAULT_COMMAND="fd --type file --hidden"
-# eval "$(fzf --zsh)"
-# Zoxide
+eval "$(fzf --zsh)"
 
 # Starship prompt
 eval "$(starship init zsh)"
