@@ -18,6 +18,8 @@ gestures {
 input {
     keyboard {
         xkb {
+          layout "fi"
+          variant "nodeadkeys"
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
