@@ -103,7 +103,7 @@ eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 
 # Zoxide (smarter cd)
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Mise (runtime version manager)
 eval "$(mise activate zsh)"

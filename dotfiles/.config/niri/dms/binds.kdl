@@ -123,7 +123,7 @@ binds {
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Super+E hotkey-overlay-title="Open filemanager" { spawn "nautilus"; }
-    Super+Return hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Super+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
