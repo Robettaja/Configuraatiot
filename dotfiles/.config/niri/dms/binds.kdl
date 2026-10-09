@@ -119,7 +119,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
-    Print { screenshot; }
+    Print { spawn "~/.local/bin/screenshot/screenshotniri.sh"; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Super+E hotkey-overlay-title="Open filemanager" { spawn "nautilus"; }
