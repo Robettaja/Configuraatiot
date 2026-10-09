@@ -10,5 +10,5 @@ set -euo pipefail
 # install DMS and its dependecies
 curl -fsSL https://install.danklinux.com -o /tmp/install-dank.sh
 
-bash /tmp/install-dank.sh \ -c niri \ --t ghostty \ --include-deps dms-greeter,danksearch \ --yes
+bash /tmp/install-dank.sh -c niri --t ghostty --include-deps dms-greeter,danksearch  -y
 
