@@ -16,7 +16,7 @@ if [[ -z "$screen" ]]; then
 fi
 
 # Capture and open the screenshot in Satty
-if ! grim -o "$screen" - | satty --filename - -o "$screenshot_path" --early-exit; then
+if ! grim -o "$screen" - | satty --filename - -o "$screenshot_path"; then
     notify-send "Screenshot" "Canceled"
     exit 1
 fi
