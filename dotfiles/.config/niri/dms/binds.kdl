@@ -113,7 +113,7 @@ binds {
     Mod+Shift+WheelScrollDown { focus-column-right; }
     Mod+Shift+WheelScrollUp { focus-column-left; }
     Mod+Up { focus-window-up; }
-    Super+W hotkey-overlay-title="Open Zen Browser" { spawn "zen-browser"; }
+    Super+W hotkey-overlay-title="Open Web Browser" { spawn "zen-browser"; }
     Mod+WheelScrollLeft { focus-column-left; }
     Mod+WheelScrollRight { focus-column-right; }
     Mod+Shift+P { power-off-monitors; }
@@ -122,8 +122,8 @@ binds {
     Print { spawn "~/.local/bin/screenshot/screenshotniri.sh"; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
-    Super+E hotkey-overlay-title="Open filemanager" { spawn "nautilus"; }
-    Super+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    Super+E hotkey-overlay-title="Open Filemanager" { spawn "nautilus"; }
+    Super+Return hotkey-overlay-title="Open Terminal" { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
