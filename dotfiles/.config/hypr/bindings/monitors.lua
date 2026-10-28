@@ -1,0 +1,16 @@
+local bind = hl.bind
+
+bind("SUPER+CTRL+H", hl.dsp.focus({ monitor = "left" }))
+bind("SUPER+CTRL+J", hl.dsp.focus({ monitor = "down" }))
+bind("SUPER+CTRL+K", hl.dsp.focus({ monitor = "up" }))
+bind("SUPER+CTRL+L", hl.dsp.focus({ monitor = "right" }))
+bind("SUPER+CTRL+Left", hl.dsp.focus({ monitor = "left" }))
+bind("SUPER+CTRL+Right", hl.dsp.focus({ monitor = "right" }))
+bind("SUPER+SHIFT+CTRL+Down", hl.dsp.window.move({ monitor = "down" }))
+bind("SUPER+SHIFT+CTRL+H", hl.dsp.window.move({ monitor = "left" }))
+bind("SUPER+SHIFT+CTRL+J", hl.dsp.window.move({ monitor = "down" }))
+bind("SUPER+SHIFT+CTRL+K", hl.dsp.window.move({ monitor = "up" }))
+bind("SUPER+SHIFT+CTRL+L", hl.dsp.window.move({ monitor = "right" }))
+bind("SUPER+SHIFT+CTRL+Left", hl.dsp.window.move({ monitor = "left" }))
+bind("SUPER+SHIFT+CTRL+Right", hl.dsp.window.move({ monitor = "right" }))
+bind("SUPER+SHIFT+CTRL+Up", hl.dsp.window.move({ monitor = "up" }))

@@ -1,0 +1,7 @@
+-- Niri-only actions intentionally left unbound rather than assigned unrelated actions:
+-- SUPER+D / SUPER+Tab: overview
+-- SUPER+SHIFT+Slash: graphical hotkey overlay
+-- SUPER+Home / End: first / last column
+-- SUPER+CTRL+Home / End: move column to first / last
+-- SUPER+CTRL+R / SUPER+SHIFT+R: reset / cycle preset window height
+-- SUPER+SHIFT+I / U / Page_Up / Page_Down: reorder workspaces

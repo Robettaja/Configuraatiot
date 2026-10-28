@@ -1,0 +1,3 @@
+-- No new autostart commands: the Niri config also relies on session startup.
+-- If DMS is not started by your session, enable:
+-- hl.on("hyprland.start", function() hl.exec_cmd("dms run") end)

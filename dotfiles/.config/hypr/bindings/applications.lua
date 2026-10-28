@@ -1,0 +1,15 @@
+local bind = hl.bind
+
+bind("CTRL+ALT+Delete", hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"), { description = "Task Manager" })
+bind("SUPER+ALT+L", hl.dsp.exec_cmd("dms ipc call lock lock"), { description = "Lock Screen" })
+bind("SUPER+Comma", hl.dsp.exec_cmd("dms ipc call settings focusOrToggle"), { description = "Settings" })
+bind("SUPER+M", hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"), { description = "Task Manager" })
+bind("SUPER+N", hl.dsp.exec_cmd("dms ipc call notifications toggle"), { description = "Notification Center" })
+bind("SUPER+SHIFT+N", hl.dsp.exec_cmd("dms ipc call notepad toggle"), { description = "Notepad" })
+bind("SUPER+Space", hl.dsp.exec_cmd("dms ipc call spotlight toggle"), { description = "Application Launcher" })
+bind("SUPER+V", hl.dsp.exec_cmd("dms ipc call clipboard toggle"), { description = "Clipboard Manager" })
+bind("SUPER+Y", hl.dsp.exec_cmd("dms ipc call dankdash wallpaper"), { description = "Browse Wallpapers" })
+bind("SUPER+X", hl.dsp.exec_cmd("dms ipc call powermenu toggle"), { description = "Power Menu: Toggle" })
+bind("SUPER+W", hl.dsp.exec_cmd("zen-browser"), { description = "Open Web Browser" })
+bind("SUPER+E", hl.dsp.exec_cmd("nautilus"), { description = "Open Filemanager" })
+bind("SUPER+Return", hl.dsp.exec_cmd("GTK_IM_MODULE=simple ghostty"), { description = "Open Terminal" })
